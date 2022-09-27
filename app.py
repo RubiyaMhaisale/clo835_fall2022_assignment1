@@ -131,6 +131,7 @@ if __name__ == '__main__':
     # Check if input color is a supported one
     if COLOR not in color_codes:
         print("Color not supported. Received '" + COLOR + "' expected one of " + SUPPORTED_COLORS)
+        print("Assignment 1 Fall 2022 - Seneca College")
         exit(1)
 
     app.run(host='0.0.0.0',port=8080,debug=True)
