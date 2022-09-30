@@ -19,21 +19,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile_mysql --tag mysql
-      
-      
-    - name: AWS ECR
-  # You may pin to the exact commit or the version.
-  # uses: kciter/aws-ecr-action@79255b7c5aa03dbf6d7c46cff2bfd049874cd98d
-      uses: kciter/aws-ecr-action@v4
-      with:
-        # The AWS access key id
-        access_key_id: OQlrX4WcQyjBdwird4Kzz7JUQZoigLyDHhYAyv8b
-        # The AWS secret access key
-        secret_access_key: ASIA3H4P5VZX7UR645E4
-        # AWS Account ID
-        account_id: 772859080303
-        # A role to assume under the account_id account.
-        # Name of your ECR repository
-        repo: 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1
-        # The AWS region
-        region: us-east-1
+    - uses: actions/checkout@v3
+    - name: Login to AWS
+      run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1
+    - uses: actions/checkout@v3
+    - name: Pushing a docker image
+      run: docker push 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1
