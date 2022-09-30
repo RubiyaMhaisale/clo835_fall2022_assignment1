@@ -21,9 +21,9 @@ jobs:
       run: docker build . --file Dockerfile_mysql --tag mysql
     - uses: actions/checkout@v3
     - name: AWS credentials
-      run: echo "[default]" >> ~/.aws/credentials | echo "aws_access_key_id=ASIA3H4P5VZX7UR645E4" >> ~/.aws/credentials | echo "aws_secret_access_key=OQlrX4WcQyjBdwird4Kzz7JUQZoigLyDHhYAyv8b" >> ~/.aws/credentials | echo "aws_session_token=FwoGZXIvYXdzEKv//////////wEaDNb2rUjGuc2wBVPseSLAATzBX2kfrTtaGyBIO1Up53sGuB40Syju8hq443jnl/rskRM2vOpONiDSZS4rYAm5Qgi1HMrIYbbR3zkYxq8ANhv01Fa4tPAEsP0RJCDKAKnM3W1e5FjApXKNKG82Xi51G5HbhgbP1VzIg9EsYsWiuBbAO5QxQuyLqcPUlBLcPewuiYrA7kxIxgCvggEC4MGxVJMS75rFPsS71IWt+kej6RdjJpG9lCX5XymCsSoRAMny7bvTAoM81gYLb68yJOw20yjwi9mZBjItMNA7Ry6pLzHVoTejhp6JsMNS7YPfKpfCKyeRk9Nfob5Xa81ctJkEymkUwXuH" >> ~/.aws/credentials
+      run: touch ~/.aws/credentials | echo "[default]" >> ~/.aws/credentials | echo "aws_access_key_id=ASIA3H4P5VZX7UR645E4" >> ~/.aws/credentials | echo "aws_secret_access_key=OQlrX4WcQyjBdwird4Kzz7JUQZoigLyDHhYAyv8b" >> ~/.aws/credentials | echo "aws_session_token=FwoGZXIvYXdzEKv//////////wEaDNb2rUjGuc2wBVPseSLAATzBX2kfrTtaGyBIO1Up53sGuB40Syju8hq443jnl/rskRM2vOpONiDSZS4rYAm5Qgi1HMrIYbbR3zkYxq8ANhv01Fa4tPAEsP0RJCDKAKnM3W1e5FjApXKNKG82Xi51G5HbhgbP1VzIg9EsYsWiuBbAO5QxQuyLqcPUlBLcPewuiYrA7kxIxgCvggEC4MGxVJMS75rFPsS71IWt+kej6RdjJpG9lCX5XymCsSoRAMny7bvTAoM81gYLb68yJOw20yjwi9mZBjItMNA7Ry6pLzHVoTejhp6JsMNS7YPfKpfCKyeRk9Nfob5Xa81ctJkEymkUwXuH" >> ~/.aws/credentials
     - uses: actions/checkout@v3
-    - name: AWS credentials
+    - name: AWS configure
       run: aws configure
     - uses: actions/checkout@v3
     - name: Login to AWS
