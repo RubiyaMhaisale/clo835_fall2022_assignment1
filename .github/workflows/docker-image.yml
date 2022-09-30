@@ -31,7 +31,8 @@ jobs:
       run: aws configure set aws_access_key_id ASIA3H4P5VZX7UR645E4 && aws configure set aws_secret_access_key OQlrX4WcQyjBdwird4Kzz7JUQZoigLyDHhYAyv8b && export AWS_DEFAULT_REGION=us-east-1
     - uses: actions/checkout@v3
     - name: Login to AWS
-      run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1
+      #run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1
+      run: docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 772859080303.dkr.ecr.us-east-1.amazonaws.com
     - uses: actions/checkout@v3
     - name: Pushing a docker image
       run: docker push 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1
