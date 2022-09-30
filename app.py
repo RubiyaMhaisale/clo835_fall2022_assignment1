@@ -7,10 +7,11 @@ import argparse
 
 app = Flask(__name__)
 
-DBHOST = os.environ.get("DBHOST") or "localhost"
-DBUSER = os.environ.get("DBUSER") or "root"
-DBPWD = os.environ.get("DBPWD") or "pw"
-DATABASE = os.environ.get("DATABASE") or "employees"
+#DBHOST = os.environ.get("DBHOST") or "localhost"
+DBHOST="172.17.0.2"
+DBUSER = "root"
+DBPWD = "pw"
+DATABASE = "employees"
 COLOR_FROM_ENV = os.environ.get('APP_COLOR') or "lime"
 DBPORT = 3306
 
