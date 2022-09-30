@@ -10,7 +10,7 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     env:
       AWS_ACCESS_KEY_ID: ASIA3H4P5VZX7UR645E4
       AWS_SECRET_ACCESS_KEY: OQlrX4WcQyjBdwird4Kzz7JUQZoigLyDHhYAyv8b
