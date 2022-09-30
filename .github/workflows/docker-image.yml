@@ -34,6 +34,6 @@ jobs:
       #run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1
       run: docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 772859080303.dkr.ecr.us-east-1.amazonaws.com
     - name: Pushing a docker image_app
-      run: docker push clo835assignment1/app
+      run: docker push 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1/app
     - name: Pushing a docker image
-      run: docker push clo835assignment1/mysql
+      run: docker push 772859080303.dkr.ecr.us-east-1.amazonaws.com/clo835assignment1/mysql
