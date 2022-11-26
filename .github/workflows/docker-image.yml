@@ -24,8 +24,8 @@ jobs:
     - name: Login to AWS
       run: docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 772859080303.dkr.ecr.us-east-1.amazonaws.com
       
-    - name: Pushing a docker image for app
+    - name: Pushing a docker image for app to ECR
       run: docker tag app 772859080303.dkr.ecr.us-east-1.amazonaws.com/assignment_app:app && docker push 772859080303.dkr.ecr.us-east-1.amazonaws.com/assignment_app:app
       
-    - name: Pushing a docker image for mysql
+    - name: Pushing a docker image for mysql to ECR
       run: docker tag mysql 772859080303.dkr.ecr.us-east-1.amazonaws.com/assignment_mysql:mysql && docker push 772859080303.dkr.ecr.us-east-1.amazonaws.com/assignment_mysql:mysql
