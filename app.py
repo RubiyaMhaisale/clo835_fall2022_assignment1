@@ -14,6 +14,7 @@ DBPWD = "pw"
 DATABASE = "employees"
 COLOR_FROM_ENV = os.environ.get('APP_COLOR') or "lime"
 DBPORT = 3306
+IMAGE_URL = os.environ.get("IMAGE_URL")
 
 # Create a connection to the MySQL database
 db_conn = connections.Connection(
@@ -76,7 +77,7 @@ def AddEmp():
         cursor.close()
 
     print("all modification done...")
-    return render_template('addempoutput.html', name=emp_name, color=color_codes[COLOR])
+    return render_template('addempoutput.html', name=emp_name, color=color_codes[COLOR], img_url=IMAGE_URL)
 
 @app.route("/getemp", methods=['GET', 'POST'])
 def GetEmp():
@@ -109,7 +110,7 @@ def FetchData():
         cursor.close()
 
     return render_template("getempoutput.html", id=output["emp_id"], fname=output["first_name"],
-                           lname=output["last_name"], interest=output["primary_skills"], location=output["location"], color=color_codes[COLOR])
+                           lname=output["last_name"], interest=output["primary_skills"], location=output["location"], color=color_codes[COLOR], img_url=IMAGE_URL)
 
 if __name__ == '__main__':
     
