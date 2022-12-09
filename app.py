@@ -7,7 +7,7 @@ import argparse
 
 app = Flask(__name__)
 
-#DBHOST = "localhost"
+
 DBHOST= os.environ.get('DBHOST')
 DBUSER = "root"
 DBPWD = "pw"
